@@ -20,7 +20,7 @@ public class CrusadeForceService {
         return repository.save(cf);
     }
 
-    public Optional<CrusadeForce> getCrusadeForce(int id){
+    public Optional<CrusadeForce> getCrusadeForceById(int id){
         return repository.findById(id);
     }
 

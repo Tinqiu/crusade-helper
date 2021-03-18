@@ -19,10 +19,10 @@ public class CrusadeForceController {
 
     @GetMapping("/crusadeforce/api/get")
     public ResponseEntity<String> getCrusadeForce(@RequestParam int crusadeId) throws JsonProcessingException {
-        var cf = service.getCrusadeForce(crusadeId);
-
-        var json = objectMapper.writeValueAsString(cf.get());
-        return ResponseEntity.ok(json);
+        var cf = service.getCrusadeForceById(crusadeId);
+        if(cf.isPresent())
+            return ResponseEntity.ok(objectMapper.writeValueAsString(cf.get()));
+        return ResponseEntity.notFound().build();
     }
 
     @PostMapping("/crusadeforce/api/create")
