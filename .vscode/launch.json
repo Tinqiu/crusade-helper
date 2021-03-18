@@ -5,8 +5,17 @@
             "type": "java",
             "name": "Launch Java Program",
             "request": "launch",
-            "mainClass": "",
-            "args": "-Dspring.profiles.active=local"
+            "mainClass": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CrusadeHelperApplication<crusade-helper>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.crusadehelper.CrusadeHelperApplication",
+            "projectName": "crusade-helper",
+            "args": ""
         }
     ]
 }
