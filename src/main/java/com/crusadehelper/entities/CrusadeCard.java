@@ -15,7 +15,7 @@ public class CrusadeCard {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "crusade_force_id", referencedColumnName = "crusade_force_id")
+    @JoinColumn(name = "crusade_force_id", referencedColumnName = "crusade_force_id", nullable = false)
     @JsonBackReference
     private CrusadeForce crusadeForce;
 }
