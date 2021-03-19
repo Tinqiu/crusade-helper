@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CrusadeForce")
 @Data
 public class CrusadeForce {
