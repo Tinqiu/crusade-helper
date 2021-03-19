@@ -9,6 +9,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CrusadeCard")
 @Data
 public class CrusadeCard {
