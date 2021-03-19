@@ -14,8 +14,7 @@ import javax.persistence.Entity;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorColumn(name = "Unit_Type")
-public class BattleTrait extends BattleHonour {
-
+public abstract class BattleTrait extends BattleHonour {
 
     protected BattleTrait() {
         super("Battle Trait of Dumminess", "This is a dummy Battle Trait");
