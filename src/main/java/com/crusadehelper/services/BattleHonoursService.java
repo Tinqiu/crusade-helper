@@ -5,11 +5,13 @@ import com.crusadehelper.enums.unittype.UnitType;
 import com.crusadehelper.repositories.BattleTraitRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class BattleTraitService {
+public class BattleHonoursService {
     private final BattleTraitRepository repository;
 
-    public BattleTraitService(BattleTraitRepository repository) {
+    public BattleHonoursService(BattleTraitRepository repository) {
         this.repository = repository;
         repository.save(new CharacterBattleTrait());
         repository.save(new VehicleBattleTrait());
@@ -17,9 +19,13 @@ public class BattleTraitService {
         repository.save(new MonsterBattleTrait());
     }
 
-    public BattleTrait getBattleTraitByUnitType(String param){
+    public List<BattleTrait> getBattleTraitByUnitType(String param){
         var unitType = UnitType.valueOf(param);
-        return repository.findBattleTraitByUnitType(unitType);
+        return repository.findBattleTraitsByUnitType(unitType);
+    }
+
+    public List<BattleTrait> getAllBattleTraits(){
+        return repository.findAll();
     }
 
 

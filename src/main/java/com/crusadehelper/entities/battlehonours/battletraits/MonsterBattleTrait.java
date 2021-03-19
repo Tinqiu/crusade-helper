@@ -9,6 +9,6 @@ import javax.persistence.Entity;
 @DiscriminatorValue("MONSTER")
 public class MonsterBattleTrait extends BattleTrait{
     public MonsterBattleTrait(){
-        super(UnitType.CHARACTER, "Monster battle trait", "dummy value for a monster battle trait");
+        super(UnitType.MONSTER, "Monster battle trait", "dummy value for a monster battle trait");
     }
 }
