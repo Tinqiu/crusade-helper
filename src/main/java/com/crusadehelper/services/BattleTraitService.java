@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BattleHonoursService {
+public class BattleTraitService {
     private final BattleTraitRepository repository;
 
-    public BattleHonoursService(BattleTraitRepository repository) {
+    public BattleTraitService(BattleTraitRepository repository) {
         this.repository = repository;
         repository.save(new CharacterBattleTrait());
         repository.save(new VehicleBattleTrait());
