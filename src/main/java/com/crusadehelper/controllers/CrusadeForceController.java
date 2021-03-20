@@ -19,7 +19,7 @@ public class CrusadeForceController {
         this.service = service;
     }
 
-    @GetMapping(value = "/crusadeforce/api/get", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/CrusadeForce/v1/CrusadeForce", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getCrusadeForce(@RequestParam int crusadeId) throws JsonProcessingException {
         var cf = service.getCrusadeForceById(crusadeId);
         if(cf.isPresent())
@@ -27,7 +27,7 @@ public class CrusadeForceController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping(value = "/crusadeforce/api/create")
+    @PostMapping(value = "/api/CrusadeForce/v1/CrusadeForce")
     public ResponseEntity<String> createCrusadeForce() {
         var cf = service.createCrusadeForce();
         return ResponseEntity.ok("Create new crusade force with id: " + cf.getId());
