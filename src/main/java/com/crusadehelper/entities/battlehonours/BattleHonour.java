@@ -1,5 +1,6 @@
 package com.crusadehelper.entities.battlehonours;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public abstract class BattleHonour {
         this.description = description;
     }
 
+    @ApiModelProperty(notes = "The name of the battle honour")
     private String name;
+    @ApiModelProperty(notes = "The description of the battle honour")
     private String description;
 }

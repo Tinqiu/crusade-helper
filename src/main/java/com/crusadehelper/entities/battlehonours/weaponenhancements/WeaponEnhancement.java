@@ -2,6 +2,7 @@ package com.crusadehelper.entities.battlehonours.weaponenhancements;
 
 import com.crusadehelper.entities.battlehonours.BattleHonour;
 import com.crusadehelper.enums.weapontype.WeaponType;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import lombok.EqualsAndHashCode;
@@ -16,6 +17,7 @@ public abstract class WeaponEnhancement extends BattleHonour {
 
 
     @Column(name = "Weapon_Type", columnDefinition = "nvarchar(255)", insertable = false, updatable = false)
+    @ApiModelProperty(notes = "The weapon type")
     private WeaponType weaponType;
 
     //TODO: add ManyToOne relation with CrusadeCard
