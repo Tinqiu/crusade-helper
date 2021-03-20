@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.crusadehelper</OriginalElement>
+  <nodes>
+    <node x="2728.8803621319585" y="280.0">com.crusadehelper.entities.battlehonours.Relic</node>
+    <node x="220.58333333333326" y="90.0">com.crusadehelper.entities.CrusadeForce</node>
+    <node x="3577.0314512910254" y="280.0">com.crusadehelper.enums.weapontype.WeaponTypeConverter</node>
+    <node x="24.583333333333258" y="90.0">com.crusadehelper.enums.faction.FactionConverter</node>
+    <node x="2720.8803621319585" y="90.0">com.crusadehelper.entities.battlehonours.BattleHonour</node>
+    <node x="1536.6677757821378" y="90.0">com.crusadehelper.enums.unittype.UnitType</node>
+    <node x="1008.4177757821377" y="500.0">com.crusadehelper.entities.battlescars.CharacterBattleScar</node>
+    <node x="3098.2566447146223" y="500.0">com.crusadehelper.services.WeaponEnhancementService</node>
+    <node x="35.83333333333326" y="280.0">com.crusadehelper.repositories.CrusadeForceRepository</node>
+    <node x="1872.778886893249" y="390.0">com.crusadehelper.entities.battlehonours.battletraits.CharacterBattleTrait</node>
+    <node x="532.5833333333333" y="280.0">com.crusadehelper.entities.CrusadeCard</node>
+    <node x="3286.201790703387" y="90.0">com.crusadehelper.enums.weapontype.WeaponType</node>
+    <node x="2871.5314512910254" y="390.0">com.crusadehelper.entities.battlehonours.weaponenhancements.RangedWeaponEnhancement</node>
+    <node x="460.4247866199987" y="710.0">com.crusadehelper.controllers.CrusadeForceController</node>
+    <node x="522.4247866199987" y="630.0">com.crusadehelper.services.CrusadeForceService</node>
+    <node x="2100.778886893249" y="390.0">com.crusadehelper.entities.battlehonours.battletraits.VehicleBattleTrait</node>
+    <node x="190.37989699425884" y="0.0">com.crusadehelper.enums.faction.Faction</node>
+    <node x="1433.4177757821376" y="500.0">com.crusadehelper.entities.battlescars.OtherBattleScar</node>
+    <node x="2313.778886893249" y="390.0">com.crusadehelper.entities.battlehonours.battletraits.MonsterBattleTrait</node>
+    <node x="2224.035917687514" y="280.0">com.crusadehelper.entities.battlehonours.battletraits.BattleTrait</node>
+    <node x="2532.8803621319585" y="280.0">com.crusadehelper.entities.battlehonours.PsychicFortitude</node>
+    <node x="3004.7814512910254" y="280.0">com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement</node>
+    <node x="804.4177757821377" y="500.0">com.crusadehelper.entities.battlescars.MonsterBattleScar</node>
+    <node x="3368.5314512910254" y="390.0">com.crusadehelper.repositories.WeaponEnhancementRepository</node>
+    <node x="2461.774786619999" y="630.0">com.crusadehelper.controllers.BattleHonoursController</node>
+    <node x="3124.5314512910254" y="390.0">com.crusadehelper.entities.battlehonours.weaponenhancements.MeleeWeaponEnhancement</node>
+    <node x="384.58333333333326" y="90.0">com.crusadehelper.enums.rank.Rank</node>
+    <node x="1945.7636755088877" y="500.0">com.crusadehelper.services.BattleTraitService</node>
+    <node x="746.8122002701782" y="280.0">com.crusadehelper.enums.unittype.UnitTypeConverter</node>
+    <node x="1636.778886893249" y="390.0">com.crusadehelper.repositories.BattleTraitRepository</node>
+    <node x="2525.778886893249" y="390.0">com.crusadehelper.entities.battlehonours.battletraits.OtherBattleTrait</node>
+    <node x="1151.3692510208473" y="390.0">com.crusadehelper.entities.battlescars.BattleScar</node>
+    <node x="512.8015151515151" y="90.0">com.crusadehelper.entities.CombatTally</node>
+    <node x="1229.4177757821376" y="500.0">com.crusadehelper.entities.battlescars.VehicleBattleScar</node>
+    <node x="348.58333333333326" y="280.0">com.crusadehelper.enums.rank.RankConverter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.crusadehelper.entities.battlescars.CharacterBattleScar" target="com.crusadehelper.entities.battlescars.BattleScar">
+      <point x="0.0" y="-15.0" />
+      <point x="1108.4177757821376" y="470.0" />
+      <point x="1186.9248065764027" y="470.0" />
+      <point x="-28.444444444444457" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.PsychicFortitude" target="com.crusadehelper.entities.battlehonours.BattleHonour">
+      <point x="-44.0" y="-15.0" />
+      <point x="2576.8803621319585" y="230.0" />
+      <point x="2765.8803621319585" y="230.0" />
+      <point x="-27.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlescars.OtherBattleScar" target="com.crusadehelper.entities.battlescars.BattleScar">
+      <point x="-56.0" y="-15.0" />
+      <point x="1461.4177757821376" y="460.0" />
+      <point x="1258.035917687514" y="460.0" />
+      <point x="42.66666666666674" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.battletraits.BattleTrait" target="com.crusadehelper.entities.battlehonours.BattleHonour">
+      <point x="51.0" y="-15.0" />
+      <point x="2343.035917687514" y="220.0" />
+      <point x="2747.8803621319585" y="220.0" />
+      <point x="-45.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlescars.MonsterBattleScar" target="com.crusadehelper.entities.battlescars.BattleScar">
+      <point x="61.333333333333314" y="-15.0" />
+      <point x="957.7511091154711" y="460.0" />
+      <point x="1172.7025843541805" y="460.0" />
+      <point x="-42.66666666666663" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement" target="com.crusadehelper.entities.battlehonours.BattleHonour">
+      <point x="-69.0" y="-15.0" />
+      <point x="3027.7814512910254" y="220.0" />
+      <point x="2837.8803621319585" y="220.0" />
+      <point x="45.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.battletraits.CharacterBattleTrait" target="com.crusadehelper.entities.battlehonours.battletraits.BattleTrait">
+      <point x="69.33333333333348" y="-15.0" />
+      <point x="2046.1122202265824" y="350.0" />
+      <point x="2258.035917687514" y="350.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlescars.VehicleBattleScar" target="com.crusadehelper.entities.battlescars.BattleScar">
+      <point x="0.0" y="-15.0" />
+      <point x="1321.4177757821376" y="470.0" />
+      <point x="1243.8136954652919" y="470.0" />
+      <point x="28.444444444444457" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.weaponenhancements.RangedWeaponEnhancement" target="com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement">
+      <point x="77.33333333333348" y="-15.0" />
+      <point x="3064.864784624359" y="370.0" />
+      <point x="3050.7814512910254" y="370.0" />
+      <point x="-46.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.weaponenhancements.MeleeWeaponEnhancement" target="com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement">
+      <point x="0.0" y="-15.0" />
+      <point x="3236.5314512910254" y="350.0" />
+      <point x="3142.7814512910254" y="350.0" />
+      <point x="46.0" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.battletraits.OtherBattleTrait" target="com.crusadehelper.entities.battlehonours.battletraits.BattleTrait">
+      <point x="-58.66666666666697" y="-15.0" />
+      <point x="2555.112220226582" y="350.0" />
+      <point x="2339.635917687514" y="350.0" />
+      <point x="47.59999999999991" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.battletraits.MonsterBattleTrait" target="com.crusadehelper.entities.battlehonours.battletraits.BattleTrait">
+      <point x="-64.0" y="-15.0" />
+      <point x="2345.778886893249" y="370.0" />
+      <point x="2312.435917687514" y="370.0" />
+      <point x="20.40000000000009" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.battletraits.VehicleBattleTrait" target="com.crusadehelper.entities.battlehonours.battletraits.BattleTrait">
+      <point x="0.0" y="-15.0" />
+      <point x="2196.778886893249" y="360.0" />
+      <point x="2271.635917687514" y="360.0" />
+      <point x="-20.40000000000009" y="15.0" />
+    </edge>
+    <edge source="com.crusadehelper.entities.battlehonours.Relic" target="com.crusadehelper.entities.battlehonours.BattleHonour">
+      <point x="22.0" y="-15.0" />
+      <point x="2794.8803621319585" y="260.0" />
+      <point x="2819.8803621319585" y="260.0" />
+      <point x="27.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.37307896131425544" x="1901.0" y="370.0" />
+  <SelectedNodes>
+    <node>com.crusadehelper.entities.battlehonours.Relic</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
