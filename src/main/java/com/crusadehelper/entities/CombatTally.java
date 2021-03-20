@@ -2,6 +2,7 @@ package com.crusadehelper.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class CombatTally {
     @ManyToOne
     @JoinColumn(name = "crusade_card_id")
     @JsonBackReference
+    @ToString.Exclude
     private CrusadeCard crusadeCard;
 
 
