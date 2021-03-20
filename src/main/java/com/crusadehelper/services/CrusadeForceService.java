@@ -3,17 +3,21 @@ package com.crusadehelper.services;
 import com.crusadehelper.entities.CrusadeCard;
 import com.crusadehelper.entities.CombatTally;
 import com.crusadehelper.entities.CrusadeForce;
+import com.crusadehelper.entities.battlescars.*;
 import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;
 import com.crusadehelper.repositories.CrusadeForceRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CrusadeForceService {
     private final CrusadeForceRepository repository;
 
@@ -29,12 +33,8 @@ public class CrusadeForceService {
         cf.setPlayerName("Vincent");
         CrusadeCard card = createDummyCard();
         cf.addCrusadeCard(card);
-        var cc = new CrusadeCard("CrusadeCardTEST", Faction.AELDARI, UnitType.CHARACTER);
-        var ct = new CombatTally();
-        ct.setUnitsDestroyedMelee(2);
-        ct.setUnitsDestroyedPsychic(1);
-        cc.addCombatTally(ct);
-        cf.addCrusadeCard(cc);
+
+
         return repository.save(cf);
     }
 
@@ -43,11 +43,43 @@ public class CrusadeForceService {
     }
 
     private CrusadeCard createDummyCard(){
-        CrusadeCard card = new CrusadeCard("Test Unit of DOOM", Faction.AELDARI, UnitType.OTHER);
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        var randomUnitType = UnitType.values()[random.nextInt(0,UnitType.values().length)];
+
+        CrusadeCard card = new CrusadeCard("Test Unit of DOOM", Faction.AELDARI, randomUnitType);
         card.setBattlefieldRole("Bring DOOOOOM");
         card.setCrusadePoints(666);
         card.setRank(Rank.LEGENDARY);
-
+        var tally = createDummyCombatTally();
+        var scar = createDummyBattleScar(randomUnitType);
+        card.addCombatTally(tally);
+        card.addBattleScar(scar);
+        log.info("Created combat card: {}", card);
         return card;
+    }
+
+    private CombatTally createDummyCombatTally(){
+        var tally = new CombatTally();
+        tally.setUnitsDestroyedMelee(2);
+        tally.setUnitsDestroyedPsychic(1);
+        log.info("Created combat tally: {}", tally);
+        return tally;
+    }
+
+    private BattleScar createDummyBattleScar(UnitType unitType){
+        switch (unitType){
+            case CHARACTER:
+                log.info("Creating CHARACTER battle scar");
+                return new CharacterBattleScar();
+            case MONSTER:
+                log.info("Creating MONSTER battle scar");
+                return new MonsterBattleScar();
+            case VEHICLE:
+                log.info("Creating VEHICLE battle scar");
+                return new VehicleBattleScar();
+            default:
+                log.info("Creating OTHER battle scar");
+                return new OtherBattleScar();
+        }
     }
 }
