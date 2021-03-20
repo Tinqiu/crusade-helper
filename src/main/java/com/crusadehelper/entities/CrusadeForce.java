@@ -2,7 +2,9 @@ package com.crusadehelper.entities;
 
 import com.crusadehelper.enums.faction.Faction;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -45,6 +47,7 @@ public class CrusadeForce {
 
     @OneToMany(mappedBy = "crusadeForce", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @Setter(AccessLevel.NONE)
     private List<CrusadeCard> crusadeCards = new ArrayList<>();
 
     public void addCrusadeCard(CrusadeCard card){
