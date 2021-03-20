@@ -3,6 +3,7 @@ package com.crusadehelper.enums.faction;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
+
 //TODO: add input validation
 //TODO: add logging
 @Converter(autoApply = true)

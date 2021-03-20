@@ -18,6 +18,14 @@ public class CrusadeForceService {
 
     public CrusadeForce createCrusadeForce(){
         var cf = new CrusadeForce();
+        cf.setFaction(Faction.NECRONS);
+        cf.setBattleTally(2);
+        cf.setVictories(1);
+        cf.setName("Silent King 2k");
+        cf.setRequisitionPoints(3);
+        cf.setSupplyLimit(50);
+        cf.setSupplyUsed(43);
+        cf.setPlayerName("Vincent");
         CrusadeCard card = createDummyCard();
         cf.addCrusadeCard(card);
         return repository.save(cf);
@@ -35,5 +43,4 @@ public class CrusadeForceService {
 
         return card;
     }
-
 }

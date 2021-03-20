@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CrusadeForceController {
     private final CrusadeForceService service;
     private final ObjectMapper objectMapper = new ObjectMapper();
+
     public CrusadeForceController(CrusadeForceService service) {
         this.service = service;
     }
