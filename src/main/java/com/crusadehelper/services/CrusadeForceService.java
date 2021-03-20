@@ -17,7 +17,7 @@ import java.util.Optional;
 public class CrusadeForceService {
     private final CrusadeForceRepository repository;
 
-    public CrusadeForce createCrusadeForce(){
+    public CrusadeForce createCrusadeForce() {
         var cf = new CrusadeForce();
         cf.setFaction(Faction.NECRONS);
         cf.setBattleTally(2);
@@ -38,11 +38,11 @@ public class CrusadeForceService {
         return repository.save(cf);
     }
 
-    public Optional<CrusadeForce> getCrusadeForceById(int id){
+    public Optional<CrusadeForce> getCrusadeForceById(int id) {
         return repository.findById(id);
     }
 
-    private CrusadeCard createDummyCard(){
+    private CrusadeCard createDummyCard() {
         CrusadeCard card = new CrusadeCard("Test Unit of DOOM", Faction.AELDARI, UnitType.OTHER);
         card.setBattlefieldRole("Bring DOOOOOM");
         card.setCrusadePoints(666);
