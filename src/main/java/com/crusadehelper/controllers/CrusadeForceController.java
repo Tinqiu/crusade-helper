@@ -27,7 +27,6 @@ public class CrusadeForceController {
         return ResponseEntity.notFound().build();
     }
 
-
     @PostMapping(value = "/api/CrusadeForce/v1/CrusadeForce")
     public ResponseEntity<String> createCrusadeForce() {
         var cf = service.createCrusadeForce();
