@@ -4,10 +4,14 @@ import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NonNull;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CrusadeCard")
@@ -62,7 +66,9 @@ public class CrusadeCard {
     @Column(name = "Battles_Played", columnDefinition = "int")
     private int battlesPlayed = 0;
 
-    //TODO: List<CombatTally> combatTallies -> create CombatTally entity, p.312 Core Rules
+    @OneToMany(mappedBy = "crusadeCard", cascade = CascadeType.ALL)
+    @Setter(AccessLevel.NONE)
+    List<CombatTally> combatTallies = new ArrayList<>();
 
     @Column(name = "Rank", columnDefinition = "nvarchar(255)")
     private Rank rank;
@@ -78,11 +84,18 @@ public class CrusadeCard {
     @JsonBackReference
     private CrusadeForce crusadeForce;
 
-    public CrusadeCard(String unitName, Faction faction, UnitType unitType){
+    protected CrusadeCard() {
+    }
+
+    public CrusadeCard(String unitName, Faction faction, UnitType unitType) {
         this.unitName = unitName;
         this.faction = faction;
         this.unitType = unitType;
     }
 
-    protected CrusadeCard(){}
+    public void addCombatTally(CombatTally tally) {
+        tally.setCrusadeCard(this);
+        this.combatTallies.add(tally);
+    }
+
 }
