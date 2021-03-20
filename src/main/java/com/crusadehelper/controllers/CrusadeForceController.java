@@ -23,8 +23,8 @@ public class CrusadeForceController {
 
     @ApiOperation(value = "Retrieve the specified crusade force and its battle cards", response = CrusadeForce.class)
     @GetMapping(value = "/api/CrusadeForce/v1/CrusadeForce", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getCrusadeForce(@RequestParam int crusadeId) throws JsonProcessingException {
-        var cf = service.getCrusadeForceById(crusadeId);
+    public ResponseEntity<String> getCrusadeForce(@RequestParam int crusadeForceId) throws JsonProcessingException {
+        var cf = service.getCrusadeForceById(crusadeForceId);
         if (cf.isPresent())
             return ResponseEntity.ok(objectMapper.writeValueAsString(cf.get()));
         return ResponseEntity.notFound().build();
