@@ -1,9 +1,12 @@
 package com.crusadehelper.entities;
 
 import com.crusadehelper.enums.faction.Faction;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CrusadeForce")
@@ -40,4 +43,12 @@ public class CrusadeForce {
     private int supplyUsed = 0;
 
 
+    @OneToMany(mappedBy = "crusadeForce", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<CrusadeCard> crusadeCards = new ArrayList<>();
+
+    public void addCrusadeCard(CrusadeCard card){
+        crusadeCards.add(card);
+        card.setCrusadeForce(this);
+    }
 }
