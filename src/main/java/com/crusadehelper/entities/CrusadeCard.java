@@ -1,5 +1,6 @@
 package com.crusadehelper.entities;
 
+import com.crusadehelper.entities.battlescars.BattleScar;
 import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;
@@ -76,8 +77,9 @@ public class CrusadeCard {
     @Column(name = "Battle_Honours", columnDefinition = "nvarchar(255)")
     private String battleHonours;
 
-    @Column(name = "Battle_Scars", columnDefinition = "nvarchar(255)")
-    private String battleScars;
+    @OneToMany(mappedBy = "crusadeCard", cascade = CascadeType.ALL)
+    @Setter(AccessLevel.NONE)
+    private List<BattleScar> battleScars = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "crusade_force_id", referencedColumnName = "crusade_force_id", nullable = false)
@@ -96,6 +98,11 @@ public class CrusadeCard {
     public void addCombatTally(CombatTally tally) {
         tally.setCrusadeCard(this);
         this.combatTallies.add(tally);
+    }
+
+    public void addBattleScar(BattleScar scar) {
+        scar.setCrusadeCard(this);
+        this.battleScars.add(scar);
     }
 
 }
