@@ -1,6 +1,7 @@
 package com.crusadehelper.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.ToString;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CombatTally")
 @Data
+@ApiModel(description = "The unit's kill tally for a single battle")
 public class CombatTally {
 
     @Id

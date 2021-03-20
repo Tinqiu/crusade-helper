@@ -5,6 +5,7 @@ import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -18,6 +19,7 @@ import java.util.List;
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity(name = "CrusadeCard")
 @Data
+@ApiModel(description = "A crusade card describing a unit")
 public class CrusadeCard {
 
     @Id

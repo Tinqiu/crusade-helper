@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/BattleHonours/v1")
-@Api(tags="Battle Honours")
+@Api(tags = "Battle Honours")
 public class BattleHonoursController {
     private final BattleTraitService battleTraitService;
     private final WeaponEnhancementService weaponEnhancementService;
