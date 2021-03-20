@@ -15,7 +15,7 @@ public class CrusadeForce {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id", columnDefinition = "int", nullable = false)
+    @Column(name = "Crusade_Force_Id", columnDefinition = "int", nullable = false)
     private int id;
 
     @Column(name = "Name", columnDefinition = "nvarchar(255)", nullable = false)
