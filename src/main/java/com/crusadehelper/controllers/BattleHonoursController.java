@@ -4,6 +4,7 @@ import com.crusadehelper.services.BattleTraitService;
 import com.crusadehelper.services.WeaponEnhancementService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,28 +22,28 @@ public class BattleHonoursController {
         this.weaponEnhancementService = weaponEnhancementService;
     }
 
-    @GetMapping(value = "/api/BattleHonours/v1/BattleTrait")
+    @GetMapping(value = "/api/BattleHonours/v1/BattleTrait", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getBattleTraitsByUnitType(@RequestParam String unitType) throws JsonProcessingException {
         var bt = battleTraitService.getBattleTraitByUnitType(unitType);
         var json = objectMapper.writeValueAsString(bt);
         return ResponseEntity.ok(json);
     }
 
-    @GetMapping(value = "/api/BattleHonours/v1/BattleTraits")
+    @GetMapping(value = "/api/BattleHonours/v1/BattleTraits", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getAllBattleTraits() throws JsonProcessingException {
         var bt = battleTraitService.getAllBattleTraits();
         var json = objectMapper.writeValueAsString(bt);
         return ResponseEntity.ok(json);
     }
 
-    @GetMapping("/api/BattleHonours/v1/WeaponEnhancement")
+    @GetMapping(value = "/api/BattleHonours/v1/WeaponEnhancement", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getAllWeaponEnhancementByType(@RequestParam String type) throws JsonProcessingException {
         var enhancements = weaponEnhancementService.getWeaponEnhancementByType(type);
         var json = objectMapper.writeValueAsString(enhancements);
         return ResponseEntity.ok(json);
     }
 
-    @GetMapping("/api/BattleHonours/v1/WeaponEnhancements")
+    @GetMapping(value = "/api/BattleHonours/v1/WeaponEnhancements", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getAllWeaponEnhancements() throws JsonProcessingException {
         var enhancements = weaponEnhancementService.getAllWeaponEnhancements();
         var json = objectMapper.writeValueAsString(enhancements);
