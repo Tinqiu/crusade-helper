@@ -1,6 +1,7 @@
 package com.crusadehelper.services;
 
 import com.crusadehelper.entities.CrusadeCard;
+import com.crusadehelper.entities.CombatTally;
 import com.crusadehelper.entities.CrusadeForce;
 import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
@@ -28,6 +29,12 @@ public class CrusadeForceService {
         cf.setPlayerName("Vincent");
         CrusadeCard card = createDummyCard();
         cf.addCrusadeCard(card);
+        var cc = new CrusadeCard("CrusadeCardTEST", Faction.AELDARI, UnitType.CHARACTER);
+        var ct = new CombatTally();
+        ct.setUnitsDestroyedMelee(2);
+        ct.setUnitsDestroyedPsychic(1);
+        cc.addCombatTally(ct);
+        cf.addCrusadeCard(cc);
         return repository.save(cf);
     }
 
