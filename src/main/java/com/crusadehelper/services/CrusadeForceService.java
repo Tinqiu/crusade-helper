@@ -1,13 +1,13 @@
 package com.crusadehelper.services;
 
-import com.crusadehelper.entities.CrusadeCard;
 import com.crusadehelper.entities.CombatTally;
+import com.crusadehelper.entities.CrusadeCard;
 import com.crusadehelper.entities.CrusadeForce;
 import com.crusadehelper.entities.battlescars.*;
 import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;
-import com.crusadehelper.repositories.CrusadeForceRepository;
+import com.crusadehelper.repositories.crusade.CrusadeForceRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

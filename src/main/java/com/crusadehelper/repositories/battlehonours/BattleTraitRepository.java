@@ -1,4 +1,4 @@
-package com.crusadehelper.repositories;
+package com.crusadehelper.repositories.battlehonours;
 
 import com.crusadehelper.entities.battlehonours.battletraits.BattleTrait;
 import com.crusadehelper.enums.unittype.UnitType;

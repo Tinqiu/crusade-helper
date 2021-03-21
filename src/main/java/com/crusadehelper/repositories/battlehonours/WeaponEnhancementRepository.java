@@ -1,4 +1,4 @@
-package com.crusadehelper.repositories;
+package com.crusadehelper.repositories.battlehonours;
 
 import com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement;
 import com.crusadehelper.enums.weapontype.WeaponType;
