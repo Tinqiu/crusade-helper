@@ -30,6 +30,7 @@ public class CrusadeForce {
     @ApiModelProperty(notes = "The crusade force's name")
     private String name;
 
+    //TODO: change this to be linked to a User
     @Column(name = "Player_Name", columnDefinition = "nvarchar(255)", nullable = false)
     @ApiModelProperty(notes = "The name of the player to which the crusade force belongs")
     private String playerName;
