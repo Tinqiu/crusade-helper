@@ -4,7 +4,7 @@ import com.crusadehelper.entities.battlehonours.weaponenhancements.MeleeWeaponEn
 import com.crusadehelper.entities.battlehonours.weaponenhancements.RangedWeaponEnhancement;
 import com.crusadehelper.entities.battlehonours.weaponenhancements.WeaponEnhancement;
 import com.crusadehelper.enums.weapontype.WeaponType;
-import com.crusadehelper.repositories.WeaponEnhancementRepository;
+import com.crusadehelper.repositories.battlehonours.WeaponEnhancementRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

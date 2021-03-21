@@ -2,7 +2,7 @@ package com.crusadehelper.services;
 
 import com.crusadehelper.entities.battlehonours.battletraits.*;
 import com.crusadehelper.enums.unittype.UnitType;
-import com.crusadehelper.repositories.BattleTraitRepository;
+import com.crusadehelper.repositories.battlehonours.BattleTraitRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
