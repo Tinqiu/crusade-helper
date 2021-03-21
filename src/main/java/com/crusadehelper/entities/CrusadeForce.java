@@ -1,12 +1,14 @@
 package com.crusadehelper.entities;
 
 import com.crusadehelper.enums.faction.Faction;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -62,6 +64,12 @@ public class CrusadeForce {
     @Setter(AccessLevel.NONE)
     @ApiModelProperty(notes = "The crusade cards belonging to the crusade force")
     private List<CrusadeCard> crusadeCards = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "Crusade_Id",referencedColumnName = "crusade_id")
+    @ToString.Exclude
+    @JsonBackReference
+    private Crusade crusade;
 
     public void addCrusadeCard(CrusadeCard card) {
         crusadeCards.add(card);

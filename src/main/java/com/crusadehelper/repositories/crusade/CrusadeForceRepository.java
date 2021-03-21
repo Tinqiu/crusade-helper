@@ -1,4 +1,4 @@
-package com.crusadehelper.repositories;
+package com.crusadehelper.repositories.crusade;
 
 import com.crusadehelper.entities.CrusadeForce;
 import org.springframework.data.jpa.repository.JpaRepository;
