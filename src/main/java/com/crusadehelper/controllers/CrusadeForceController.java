@@ -31,9 +31,9 @@ public class CrusadeForceController {
     }
 
     @ApiOperation(value = "Retrieve all crusade forces and their battle cards", response = CrusadeForce.class)
-    @PostMapping(value = "/CrusadeForce")
-    public ResponseEntity<String> createCrusadeForce() {
+    @PostMapping(value = "/api/CrusadeForce/v1/CrusadeForce")
+    public ResponseEntity<String> createCrusadeForce() throws JsonProcessingException {
         var cf = service.createCrusadeForce();
-        return ResponseEntity.ok("Create new crusade force with id: " + cf.getId());
+        return ResponseEntity.ok(objectMapper.writeValueAsString(cf));
     }
 }

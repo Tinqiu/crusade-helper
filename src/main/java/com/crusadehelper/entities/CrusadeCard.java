@@ -7,10 +7,7 @@ import com.crusadehelper.enums.unittype.UnitType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -107,6 +104,7 @@ public class CrusadeCard {
     @JoinColumn(name = "crusade_force_id", referencedColumnName = "crusade_force_id", nullable = false)
     @JsonBackReference
     @ApiModelProperty(notes = "The crusade force to which this unit belongs")
+    @ToString.Exclude
     private CrusadeForce crusadeForce;
 
     protected CrusadeCard() {
