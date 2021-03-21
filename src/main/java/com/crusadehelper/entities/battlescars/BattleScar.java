@@ -3,6 +3,7 @@ package com.crusadehelper.entities.battlescars;
 import com.crusadehelper.entities.CrusadeCard;
 import com.crusadehelper.enums.unittype.UnitType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.ToString;
 
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Entity(name = "Battle_Scar")
 @Data
 @DiscriminatorColumn(name = "Unit_Type")
+@ApiModel(description = "A battle scar")
 public abstract class BattleScar {
 
     protected BattleScar(String name, String description, UnitType unitType) {
@@ -19,7 +21,9 @@ public abstract class BattleScar {
         this.description = description;
         this.unitType = unitType;
     }
-    protected BattleScar(){}
+
+    protected BattleScar() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

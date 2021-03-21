@@ -2,6 +2,7 @@ package com.crusadehelper.entities.battlehonours.battletraits;
 
 import com.crusadehelper.entities.battlehonours.BattleHonour;
 import com.crusadehelper.enums.unittype.UnitType;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorColumn(name = "Unit_Type")
+@ApiModel(description = "A battle trait battle honour")
 public abstract class BattleTrait extends BattleHonour {
 
     protected BattleTrait() {
