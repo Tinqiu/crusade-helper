@@ -69,6 +69,7 @@ public class CrusadeForce {
     @JoinColumn(name = "Crusade_Id",referencedColumnName = "crusade_id")
     @ToString.Exclude
     @JsonBackReference
+    @ApiModelProperty(notes = "The crusade to which the crusade force belongs to")
     private Crusade crusade;
 
     public void addCrusadeCard(CrusadeCard card) {
