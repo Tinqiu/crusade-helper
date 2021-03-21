@@ -30,14 +30,14 @@ Feature: CRUD Operations for Crusade Forces
       Then The crusade force is created
       And The crusade force's faction is <faction>
       Examples:
-        | faction     |
-        | Imperium    |
-        | Chaos       |
-        | Aeldari     |
-        | Tyranids    |
-        | Orks        |
-        | Necrons     |
-        | T'au Empire |
+        | faction    |
+        | Imperium   |
+        | Chaos      |
+        | Aeldari    |
+        | Tyranids   |
+        | Orks       |
+        | Necrons    |
+        | Tau Empire |
     Scenario Outline: Creating a crusade force with an invalid faction
       Given I am an authenticated user
       And I provide faction as <faction>
@@ -74,29 +74,29 @@ Feature: CRUD Operations for Crusade Forces
       Then The crusade force is created
       And The crusade force's player name is <name>
       Examples:
-        | name                                |
-        | a lowercase string                    |
-        | an uppercase string                    |
-        | a mixed case string                   |
-        | an alphanumeric string                 |
-        | a string containing digits only       |
-        | zero                                |
-        | a decimal number                    |
-        | literal NaN                         |
-        | a regex string                      |
-        | a string containing wildcard chars    |
-        | a single character                  |
-        | a string containing punctuation chars |
-        | a string containing accented letters  |
-        | a string containing non-latin chars   |
-        | a SQL statement                     |
-        | literal null                        |
-        | literal true                        |
-        | literal false                       |
-        | a string containing max chars       |
-        | a string containing max chars - 1   |
-        | an email address                    |
-        | a string containing whitespace chars |
+        | name                                    |
+        | a lowercase string                      |
+        | an uppercase string                     |
+        | a mixed case string                     |
+        | an alphanumeric string                  |
+        | a string containing digits only         |
+        | zero                                    |
+        | a decimal number                        |
+        | literal NaN                             |
+        | a regex string                          |
+        | a string containing wildcard chars      |
+        | a single character                      |
+        | a string containing punctuation chars   |
+        | a string containing accented letters    |
+        | a string containing non-latin chars     |
+        | a SQL statement                         |
+        | literal null                            |
+        | literal true                            |
+        | literal false                           |
+        | a string containing max chars           |
+        | a string containing max chars - 1       |
+        | an email address                        |
+        | a string containing whitespace chars    |
         | a string starting with whitespace chars |
         | a string ending with whitespace chars   |
     Scenario Outline: Creating a crusade force with an invalid player name
@@ -107,8 +107,8 @@ Feature: CRUD Operations for Crusade Forces
       And The response body indicates an invalid player name
       And The crusade force is not created
       Examples:
-        | name |
-        | an empty string |
+        | name                                |
+        | an empty string                     |
         | a string containing only whitespace |
         | a string containing max chars + 1   |
     Example: Creating a crusade force with no player name
