@@ -1,0 +1,25 @@
+type|roll|name|description
+character|1|Swift and Agile|Add 1 inch to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.
+character|2|Heroic Constitution|Add 1 to the Wounds characteristic of one CHARACTER model in this unit.
+character|3|Resilient|Roll one D6 each time a CHARACTER model in this unit would lose a wound; on a 6, that wound is not lost.
+character|4|Deadly Charge|Add 1 to the Attacks characteristic of CHARACTER models in this unit in the Fight phase if this unit made a charge move, was charged, or performed a Heroic Intervention this turn.
+character|5|Inspiring Hero|Add 1 to the Leadership characteristic of friendly units while they are within 6 inches of a CHARACTER model from this unit. In addition, this unit can perform Heroic Interventions if, after the enemy has made all its charge moves, it is within 6 inches of any enemy units, and it can move up to 6 inches when doing so.
+character|6|Tactical Experience|While a CHARACTER model from this unit is on the battlefield, roll one D6 each time you spend a CP to use a Stratagem; on a 6, you immediately regain 1 CP.
+monster|1|Unstoppable|Add 2 inches to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.
+monster|2|Apex Predator|Re-roll hit rolls of 1 when resolving attacks made by MONSTER models in this unit.
+monster|3|Thickened Hide|Add 1 to saving throws made for MONSTER models in this unit against attacks that have an Armour Penetration characteristic of 0 or -1 (invulnerable saving throws are unaffected).
+monster|4|Frenzied|Add 1 to the Attacks characteristic of MONSTER models in this unit in the Fight phase if this unit made a charge move, was charged, or performed a Heroic Intervention this turn.
+monster|5|Regenerates|MONSTER models in this unit regain 1 lost wound at the start of each of your Command phases.
+monster|6|Terrifying|Roll two dice when taking a Morale test for an enemy unit within 6 inches of this unit and discard the lowest result (if both dice results are the same, discard either one of them).
+vehicle|1|Enhanced Engines|Add 2 inches to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.
+vehicle|2|Elite Crew|Re-roll hit rolls of 1 when resolving attacks made by VEHICLE models in this unit.
+vehicle|3|Improved Shielding|Add 1 to saving throws made for VEHICLE models in this unit against attacks that have an Armour Penetration characteristic of 0 or -1 (invulnerable saving throws are unaffected).
+vehicle|4|Armourbane|Re-roll wound rolls of 1 when resolving attacks made by VEHICLE models in this unit that target enemy VEHICLE or MONSTER units.
+vehicle|5|Repair Systems|VEHICLE models in this unit regain 1 lost wound at the start of each of your Command phases.
+vehicle|6|Blessed Hull|Roll one D6 each time a mortal wound is allocated to a VEHICLE model in this unit; on a 5+ that mortal wound is ignored.
+other|1|Fleet of Foot|Add 1 inch to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.
+other|2|Veteran Warriors|Re-roll hit rolls of 1 when resolving attacks made by models in this unit.
+other|3|Grizzled|Roll one D6 each time a model in this unit would lose a wound; on a 6, that wound is not lost.
+other|4|Headhunters|Add 1 to hit rolls and wound rolls made when resolving attacks with models in this unit that target enemy CHARACTER units.
+other|5|Cool-headed|You can re-roll failed Morale tests taken for this unit. In addition, if a unit declares this unit as the target of their charge, this unit can fire Overwatch (and will score hits on unmodified rolls of 5+ instead of 6 when doing so).
+other|6|Battle-tested|This unit has the Objective Secured ability and can make attacks with ranged weapons while performing an Action without that action failing. Combat Attrition tests taken for this unit are automatically passed while it is within range of an objective marker.

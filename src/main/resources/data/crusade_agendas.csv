@@ -1,0 +1,18 @@
+type|tally_name|add_when|result
+Purge the enemy|Assassins|Unit destroys an enemy CHARACTER unit|2 XP per mark
+Purge the enemy|Priority Target|Unit destroys an enemy VEHICLE or MONSTER unit|2 XP per mark
+Purge the enemy|Titan Hunter|Unit destroys an enemy TITANIC unit|4 XP per mark
+Purge the enemy|King slayer|Unit destroys an enemy WARLORD unit (who isn't later resurrected)|3 XP per mark
+No Mercy No Respite|First Strike|Unit destroys an enemy unit in the first battle round|1 XP per mark
+No Mercy No Respite|Cull the Hordes|Unit destroys 6+ models in a single phase|1 XP per mark
+No Mercy No Respite|Reaper|The unit with the highest combat tally of destroyed enemy units|2 XP to highest unit only
+Battlefield Supremacy|Sentinel|At start of Command phase, select an objective marker and a unit in your army.|4 XP if, when the battle ends, you control the marker and the unit is in range
+Battlefield Supremacy|Breakthrough|At the end of the battle, select up to 3 units (exc. AIRCRAFT) that are wholly within 6 inches of your opponent's battlefield edge to gain XP|2 XP
+Battlefield Supremacy|Survivor|At start of first Command phase, select a unit.|2 XP if not destroyed, +2 XP if not below half-strength/wounds
+Shadow Operations|Secure the Area|Unit completes a Secure the Area action - non-CHARACTER INFANTRY start this at the end of your Movement phase if within 6 inches of the center of battle field. Action is complete at the end of your turn|1 XP per completed action
+Shadow Operations|Search for Archeotech|Unit completes a Search for Archeotech action - One or more INFANTRY units wholly within your opponent's deployment zone can start this at the end of your Movement phase. Action is complete at the end of your turn.|3 XP if unit has completed action 2+ times
+Shadow Operations|Deploy Vox-relay|At the start of the first battle round before the first turn begins, select one INFANTRY unit. The unit can perform the Deploy Vox-relay action - chosen unit can start this at the end of your Movement phase if within range of an objective marker without a vox relay, completes at the end of your turn. Vox-relays are lost if your opponent controls the objective marker at the start of any phase|2 XP per vox-relay on markers you control when the battle ends
+Shadow Operations|Recover Mission Archives|Unit completes a Recover Mission Archives action - one INFANTRY, CAVALRY, or BIKER unit from your army can start this at the end of your Movement phase if within range of an objective marker that hasn't been successfully searched by your army this battle. Action completes at the end of your next Command phase as long as the unit is still in range.|At the Agenda Achieved step, roll one D6. If score is equal to or less than the combined total of Recover Mission Archives tallies, or if the combined tally equals the number of objective markers set up at the start of the battle, then one unit that successfully performed this action gets 6 XP
+Warpcraft|Witch Hunter|Unit destroys an enemy PSYKER unit|1 XP per non-CHARACTER PSYKER, 3 XP per CHARACTER PSYKER
+Warpcraft|Lord of the Warp|Unit successfully manifests a psychic power, denies an enemy psychic power, or completes a psychic action. Reset to 0 if unit suffers Perils of the Warp|2 XP to unit with highest tally (if greater than 0)
+Warpcraft|Scry Battle Plans|PSYKER CHARACTER unit successfully completes the Scry Battle Plans Psychic Action (Warp Charge 4) - your PSYKER character units can attempt this action in your Psychic phase if within 18 inches of an enemy CHARACTER unit|5 XP if tally is at least 2
