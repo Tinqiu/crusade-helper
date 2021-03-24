@@ -1,6 +1,6 @@
 package com.crusadehelper.repositories.crusade;
 
-import com.crusadehelper.entities.CrusadeForce;
+import com.crusadehelper.entities.crusade.CrusadeForce;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

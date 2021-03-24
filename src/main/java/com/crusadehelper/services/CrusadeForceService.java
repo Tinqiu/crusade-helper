@@ -1,9 +1,9 @@
 package com.crusadehelper.services;
 
-import com.crusadehelper.entities.CombatTally;
-import com.crusadehelper.entities.CrusadeCard;
-import com.crusadehelper.entities.CrusadeForce;
 import com.crusadehelper.entities.battlescars.*;
+import com.crusadehelper.entities.crusade.CombatTally;
+import com.crusadehelper.entities.crusade.CrusadeCard;
+import com.crusadehelper.entities.crusade.CrusadeForce;
 import com.crusadehelper.enums.faction.Faction;
 import com.crusadehelper.enums.rank.Rank;
 import com.crusadehelper.enums.unittype.UnitType;

@@ -1,6 +1,6 @@
 package com.crusadehelper.controllers;
 
-import com.crusadehelper.entities.CrusadeForce;
+import com.crusadehelper.entities.crusade.CrusadeForce;
 import com.crusadehelper.services.CrusadeForceService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
