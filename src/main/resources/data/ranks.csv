@@ -1,0 +1,6 @@
+rank, minxp, maxxp, battlehonours
+Battle-ready, 0, 5, 0
+Bloodied, 6, 15, 1
+Battle-honoured, 16, 30, 2
+Heroic, 31, 50, 3
+Legendary, 51, infinity, 4
