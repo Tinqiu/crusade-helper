@@ -54,7 +54,7 @@ public class CrusadeController {
 
     @GetMapping("/crusade/dummy")
     @ApiOperation(value = "returns a crusade with the specified id", response = Crusade.class)
-    public ResponseEntity<Crusade> getCrusade(@RequestParam int crusadeId) throws JsonProcessingException {
+    public ResponseEntity<Crusade> getCrusade(@RequestParam int crusadeId) {
         var crusade = crusadeService.getCrusadeById(crusadeId);
         return crusade.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
