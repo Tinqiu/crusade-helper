@@ -21,29 +21,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CrusadeForceService {
     private final CrusadeForceRepository repository;
 
-    public CrusadeForce createCrusadeForce() {
-        var cf = new CrusadeForce();
-        cf.setFaction(Faction.NECRONS);
-        cf.setBattleTally(2);
-        cf.setVictories(1);
-        cf.setName("Silent King 2k");
-        cf.setRequisitionPoints(3);
-        cf.setSupplyLimit(50);
-        cf.setSupplyUsed(43);
-        cf.setPlayerName("Vincent");
-        CrusadeCard card = createDummyCard();
-        cf.addCrusadeCard(card);
-
-        return repository.save(cf);
-    }
-
     public Optional<CrusadeForce> getCrusadeForceById(int id) {
         return repository.findById(id);
     }
 
     private CrusadeCard createDummyCard() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        var randomUnitType = UnitType.values()[random.nextInt(0,UnitType.values().length)];
+        var randomUnitType = UnitType.values()[random.nextInt(0, UnitType.values().length)];
 
         CrusadeCard card = new CrusadeCard("Test Unit of DOOM", Faction.AELDARI, randomUnitType);
         card.setBattlefieldRole("Bring DOOOOOM");
@@ -57,7 +41,7 @@ public class CrusadeForceService {
         return card;
     }
 
-    private CombatTally createDummyCombatTally(){
+    private CombatTally createDummyCombatTally() {
         var tally = new CombatTally();
         tally.setUnitsDestroyedMelee(2);
         tally.setUnitsDestroyedPsychic(1);
@@ -65,8 +49,8 @@ public class CrusadeForceService {
         return tally;
     }
 
-    private BattleScar createDummyBattleScar(UnitType unitType){
-        switch (unitType){
+    private BattleScar createDummyBattleScar(UnitType unitType) {
+        switch (unitType) {
             case CHARACTER:
                 log.info("Creating CHARACTER battle scar");
                 return new CharacterBattleScar();
@@ -80,5 +64,10 @@ public class CrusadeForceService {
                 log.info("Creating OTHER battle scar");
                 return new OtherBattleScar();
         }
+    }
+
+    CrusadeForce createCrusadeForce(String player, Faction faction) {
+        //TODO: add input validation
+        return new CrusadeForce(player, faction);
     }
 }

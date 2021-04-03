@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,7 +15,14 @@ import java.util.List;
 @Entity(name = "CrusadeForce")
 @Data
 @ApiModel(description = "A force participating in a crusade")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EqualsAndHashCode(exclude = "crusade")
 public class CrusadeForce {
+
+    public CrusadeForce(@NonNull String playerName, @NonNull Faction faction) {
+        this.playerName = playerName;
+        this.faction = faction;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,17 +30,19 @@ public class CrusadeForce {
     @ApiModelProperty(notes = "The auto-generated ID for the crusade force")
     private int id;
 
-    @Column(name = "Name", columnDefinition = "nvarchar(255)", nullable = false)
+    @Column(name = "Name", columnDefinition = "nvarchar(255)")
     @ApiModelProperty(notes = "The crusade force's name")
     private String name;
 
     //TODO: change this to be linked to a User
     @Column(name = "Player_Name", columnDefinition = "nvarchar(255)", nullable = false)
     @ApiModelProperty(notes = "The name of the player to which the crusade force belongs")
+    @NonNull
     private String playerName;
 
     @Column(name = "Faction", columnDefinition = "nvarchar(255)", nullable = false)
     @ApiModelProperty(notes = "The faction to which the crusade force belongs")
+    @NonNull
     private Faction faction;
 
     @Column(name = "Battle_Tally", columnDefinition = "int", nullable = false)
@@ -67,7 +73,7 @@ public class CrusadeForce {
     private List<CrusadeCard> crusadeCards = new ArrayList<>();
 
     @ManyToOne
-    @JoinColumn(name = "Crusade_Id",referencedColumnName = "crusade_id")
+    @JoinColumn(name = "Crusade_Id", referencedColumnName = "crusade_id")
     @ToString.Exclude
     @JsonBackReference
     @ApiModelProperty(notes = "The crusade to which the crusade force belongs to")

@@ -1,4 +1,4 @@
-package com.crusadehelper.controllers;
+package com.crusadehelper.web.controllers;
 
 import com.crusadehelper.entities.crusade.CrusadeForce;
 import com.crusadehelper.services.CrusadeForceService;
@@ -8,7 +8,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/CrusadeForce/v1")
@@ -30,10 +33,10 @@ public class CrusadeForceController {
         return ResponseEntity.notFound().build();
     }
 
-    @ApiOperation(value = "Retrieve all crusade forces and their battle cards", response = CrusadeForce.class)
-    @PostMapping(value = "/CrusadeForce")
-    public ResponseEntity<String> createCrusadeForce() throws JsonProcessingException {
-        var cf = service.createCrusadeForce();
-        return ResponseEntity.ok(objectMapper.writeValueAsString(cf));
-    }
+//    @ApiOperation(value = "Retrieve all crusade forces and their battle cards", response = CrusadeForce.class)
+//    @PostMapping(value = "/CrusadeForce")
+//    public ResponseEntity<String> createCrusadeForce() throws JsonProcessingException {
+//        var cf = service.createCrusadeForce();
+//        return ResponseEntity.ok(objectMapper.writeValueAsString(cf));
+//    }
 }
