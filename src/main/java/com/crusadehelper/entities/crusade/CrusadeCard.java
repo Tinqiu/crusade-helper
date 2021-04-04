@@ -1,4 +1,4 @@
-package com.crusadehelper.entities;
+package com.crusadehelper.entities.crusade;
 
 import com.crusadehelper.entities.battlescars.BattleScar;
 import com.crusadehelper.enums.faction.Faction;

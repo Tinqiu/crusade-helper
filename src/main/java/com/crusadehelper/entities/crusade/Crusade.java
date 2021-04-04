@@ -1,4 +1,4 @@
-package com.crusadehelper.entities;
+package com.crusadehelper.entities.crusade;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;

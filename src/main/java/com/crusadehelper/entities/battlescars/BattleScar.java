@@ -1,6 +1,6 @@
 package com.crusadehelper.entities.battlescars;
 
-import com.crusadehelper.entities.CrusadeCard;
+import com.crusadehelper.entities.crusade.CrusadeCard;
 import com.crusadehelper.enums.unittype.UnitType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.annotations.ApiModel;
