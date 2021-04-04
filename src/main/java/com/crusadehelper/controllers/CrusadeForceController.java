@@ -22,7 +22,7 @@ public class CrusadeForceController {
     }
 
     @ApiOperation(value = "Retrieve the specified crusade force and its battle cards", response = CrusadeForce.class)
-    @GetMapping(value = "/api/CrusadeForce/v1/CrusadeForce", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/CrusadeForce", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getCrusadeForce(@RequestParam int crusadeForceId) throws JsonProcessingException {
         var cf = service.getCrusadeForceById(crusadeForceId);
         if (cf.isPresent())
@@ -31,9 +31,9 @@ public class CrusadeForceController {
     }
 
     @ApiOperation(value = "Retrieve all crusade forces and their battle cards", response = CrusadeForce.class)
-    @PostMapping(value = "/api/CrusadeForce/v1/CrusadeForce")
-    public ResponseEntity<String> createCrusadeForce() {
+    @PostMapping(value = "/CrusadeForce")
+    public ResponseEntity<String> createCrusadeForce() throws JsonProcessingException {
         var cf = service.createCrusadeForce();
-        return ResponseEntity.ok("Create new crusade force with id: " + cf.getId());
+        return ResponseEntity.ok(objectMapper.writeValueAsString(cf));
     }
 }
