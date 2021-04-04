@@ -1,36 +1,32 @@
 package com.crusadehelper.dataloader;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
-import javax.transaction.Transactional;
-import com.crusadehelper.entities.security.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.crusadehelper.entities.security.Privilege;
+import com.crusadehelper.entities.security.Role;
+import com.crusadehelper.entities.security.User;
+import com.crusadehelper.repositories.security.PrivilegeRepository;
+import com.crusadehelper.repositories.security.RoleRepository;
+import com.crusadehelper.repositories.security.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import com.crusadehelper.repositories.security.UserRepository;
-import com.crusadehelper.repositories.security.RoleRepository;
-import com.crusadehelper.repositories.security.PrivilegeRepository;
+
+import javax.transaction.Transactional;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 @Component
+@RequiredArgsConstructor
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PrivilegeRepository privilegeRepository;
+    private final PasswordEncoder passwordEncoder;
+
     boolean alreadySetup = false;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    private PrivilegeRepository privilegeRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Override
     @Transactional
@@ -43,7 +39,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
         List<Privilege> adminPrivileges = Arrays.asList(readPrivilege, writePrivilege);        
         createRoleIfNotFound("ROLE_ADMIN", adminPrivileges);
-        createRoleIfNotFound("ROLE_USER", Arrays.asList(readPrivilege));
+        createRoleIfNotFound("ROLE_USER", Collections.singletonList(readPrivilege));
 
         Role adminRole = roleRepository.findByName("ROLE_ADMIN");
         User user = new User();
@@ -51,7 +47,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         user.setLastName("Test");
         user.setPassword(passwordEncoder.encode("test"));
         user.setEmail("test@test.com");
-        user.setRoles(Arrays.asList(adminRole));
+        user.setRoles(Collections.singletonList(adminRole));
         user.setEnabled(true);
         userRepository.save(user);
 
