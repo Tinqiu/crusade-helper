@@ -46,7 +46,7 @@ public class CrusadeService {
      * Creates a {@link CrusadeForce} assigned to the player that is creating the crusade.
      *
      * @param crusadeForm
-     * @return a CrusadeForce
+     * @return a CrusadeForce with the provided {@link Faction} and assigned to the provided player
      */
     private CrusadeForce createInitialPlayerCrusadeForce(CrusadeForm crusadeForm) {
         Faction faction = Faction.fromString(crusadeForm.getFaction());
